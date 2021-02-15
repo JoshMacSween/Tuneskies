@@ -4,7 +4,7 @@ import {View, Text, Button, StyleSheet} from 'react-native';
 export default function HomeScreen({navigation}) {
   return (
     <View style={styles.container}>
-      <Text>Home Screen</Text>
+      <Text style={[styles.header, styles.largeText]}>Tuneskies</Text>
       <Button
         onPress={() => navigation.navigate('Login')}
         title="Go to Login"
@@ -18,5 +18,14 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  header: {
+    fontFamily: 'AvenirNext-Regular',
+  },
+  largeText: {
+    fontSize: 44,
+  },
+  smallText: {
+    fontSize: 18,
   },
 });
