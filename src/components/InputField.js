@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
   },
   input: {
-    backgroundColor: '#666',
+    backgroundColor: '#483D8B',
     color: 'white',
     height: 40,
     width: 300,

@@ -1,31 +1,22 @@
-import React from 'react';
-import {KeyboardAvoidingView, Text, Button, StyleSheet} from 'react-native';
+import React, {useContext} from 'react';
+import {KeyboardAvoidingView, Text, Button} from 'react-native';
 import InputField from './components/InputField';
+import {StylesContext} from './contexts/StylesProvider';
 
 export default function Login({navigation}) {
+  const {largeText, smallText, textStyle, container} = useContext(
+    StylesContext,
+  );
   return (
-    <KeyboardAvoidingView style={styles.container} behavior="padding">
-      <Text style={[styles.largeText, styles.textStyle]}>Login</Text>
+    <KeyboardAvoidingView style={container} behavior="padding">
+      <Text style={[largeText, textStyle]}>Login</Text>
       <InputField placeholder="Email" />
       <InputField placeholder="Password" />
-      <Button onPress={() => navigation.goBack()} title="Go back home" />
+      <Button
+        onPress={() => navigation.goBack()}
+        title="Go back home"
+        style={smallText}
+      />
     </KeyboardAvoidingView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  largeText: {
-    fontSize: 44,
-  },
-  smallText: {
-    fontSize: 18,
-  },
-  textStyle: {
-    fontFamily: 'AvenirNext-Regular',
-  },
-});
